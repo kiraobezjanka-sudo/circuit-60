@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090c0b">
+  <title>Контур-60</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Аварийный протокол // Узел 07</p>
+        <h1>КОНТУР<span>—60</span></h1>
+      </div>
+      <div class="status-light"><i></i><span id="systemStatus">ОЖИДАНИЕ</span></div>
+    </header>
+
+    <section class="mission">
+      <p><strong>ЗАДАЧА:</strong> восстановить питание всех пяти терминалов до аварийного отключения.</p>
+      <div class="legend"><span>● Источник</span><span>◆ Терминал</span><span>▣ Заблокирован</span></div>
+    </section>
+
+    <section class="console">
+      <aside class="hud-panel">
+        <div class="metric timer-metric">
+          <span>ОСТАЛОСЬ</span>
+          <strong id="timer">01:00</strong>
+          <div class="timer-track"><i id="timerFill"></i></div>
+        </div>
+        <div class="metric"><span>ТЕРМИНАЛЫ</span><strong><b id="powered">0</b> / 5</strong></div>
+        <div class="metric"><span>ПОВОРОТЫ</span><strong id="moves">0</strong></div>
+        <button id="pauseButton" class="button secondary" type="button">ПАУЗА [P]</button>
+        <button id="soundButton" class="icon-button" type="button" aria-pressed="false">ЗВУК: ВКЛ</button>
+      </aside>
+
+      <div class="board-wrap" id="boardWrap">
+        <canvas id="board" width="720" height="720" aria-label="Игровое поле 6 на 6"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <p id="overlayCode">СИСТЕМА ГОТОВА</p>
+            <h2 id="overlayTitle">Контур разорван</h2>
+            <p id="overlayText">Поверните узлы и подайте энергию ко всем терминалам. У вас одна минута.</p>
+            <button id="primaryButton" class="button" type="button">НАЧАТЬ [ENTER]</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="controls-panel">
+        <h2>УПРАВЛЕНИЕ</h2>
+        <dl>
+          <div><dt>WASD / ↑↓←→</dt><dd>Выбор узла</dd></div>
+          <div><dt>E / ПРОБЕЛ</dt><dd>По часовой</dd></div>
+          <div><dt>Q</dt><dd>Против часовой</dd></div>
+          <div><dt>МЫШЬ</dt><dd>ЛКМ / ПКМ</dd></div>
+          <div><dt>P / ESC</dt><dd>Пауза</dd></div>
+        </dl>
+        <p class="tip">Соседние провода должны смотреть друг на друга. Запитанные линии светятся.</p>
+      </aside>
+    </section>
+    <footer><span>Локальный оператор: ACTIVE</span><span>Сеть: ISOLATED</span><span>Версия 1.0</span></footer>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
+
